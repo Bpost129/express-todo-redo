@@ -1,13 +1,9 @@
 import { Router } from 'express'
-import { todos } from '../data/todo-data.js'
+import * as todosCtrl from '../controllers/todos.js'
 
 const router = Router()
 
 // GET localhost:3000/users
-router.get('/', function(req, res) {
-  res.render('todos/index', {
-    todos: todos
-  })
-})
+router.get('/', todosCtrl.index)
 
 export { router }
