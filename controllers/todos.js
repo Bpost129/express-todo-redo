@@ -29,10 +29,24 @@ function create(req, res) {
   })
 }
 
+function show(req, res) {
+  Todo.findById(req.params.todoId)
+  .then(todo => {
+    res.render('todos/show', {
+      todo: todo
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/todos')
+  })
+}
+
 export {
   index,
   newTodo as new,
   create,
+  show,
 
 }
 

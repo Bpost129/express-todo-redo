@@ -8,6 +8,8 @@ router.get('/', todosCtrl.index)
 
 router.get('/new', todosCtrl.new)
 
+router.get('/:todoId', todosCtrl.show)
+
 router.post('/', todosCtrl.create)
 
 export { router }

@@ -10,7 +10,7 @@
   <ul>
     <% todos.forEach(todo => { %>
       <li>
-				<%= todo.text %> 
+				<a href="/todos/<%= todo.id %>"><%= todo.text %></a> 
 				- 
 				<%= todo.done ? 'done' : 'not done' %>
 			</li>
