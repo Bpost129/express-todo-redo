@@ -1,8 +1,15 @@
-import { todos } from '../data/todo-data.js'
+import { Todo } from "../models/todo.js"
 
 function index(req, res) {
-  res.render('todos/index', {
-    todos: todos
+  Todo.find({})
+  .then(todos => {
+    res.render('todos/index', {
+      todos: todos,
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
   })
 }
 
@@ -10,3 +17,4 @@ export {
   index,
 
 }
+
