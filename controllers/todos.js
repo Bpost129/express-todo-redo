@@ -13,8 +13,26 @@ function index(req, res) {
   })
 }
 
+function newTodo(req, res) {
+  res.render('todos/new')
+}
+
+function create(req, res) {
+  req.body.done = false
+  Todo.create(req.body)
+  .then(todo => {
+    res.redirect('/todos')
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/todos')
+  })
+}
+
 export {
   index,
+  newTodo as new,
+  create,
 
 }
 
