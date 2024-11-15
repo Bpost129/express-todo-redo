@@ -16,7 +16,7 @@
     <label for="text-input">Text:</label>
     <input type="text" name="text" id="text-input" value="<%= todo.text %>">
     <label for="done-iput">Complete:</label>
-    <input type="checkbox">
+    <input type="checkbox" id="done-input" name="done" <%= todo.done ? 'checked' : '' %>>
     <button type="submit">Update</button>
   </form>
 

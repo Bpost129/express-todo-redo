@@ -68,6 +68,7 @@ function edit(req, res){
 }
 
 function update(req, res) {
+  req.body.done = !!req.body.done
   Todo.findByIdAndUpdate(req.params.todoId, req.body, {new: true})
   .then(todo => {
     res.redirect(`/todos/${todo._id}`)
