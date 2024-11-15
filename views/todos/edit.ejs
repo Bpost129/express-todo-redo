@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Todo #<%= todo._id %></h1>
+
+  <form 
+    action="/todos/<%= todo._id %>?_method=PUT"
+    class="delete-form" 
+    method="POST"
+  >
+    <label for="text-input">Text:</label>
+    <input type="text" name="text" id="text-input" value="<%= todo.text %>">
+    <label for="done-iput">Complete:</label>
+    <input type="checkbox">
+    <button type="submit">Update</button>
+  </form>
+
+	<a href="/todos/<%= todo._id %>">Go back</a>
+</body>
+</html>

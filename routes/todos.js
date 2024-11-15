@@ -10,8 +10,12 @@ router.get('/new', todosCtrl.new)
 
 router.get('/:todoId', todosCtrl.show)
 
+router.get('/:todoId/edit', todosCtrl.edit)
+
 router.post('/', todosCtrl.create)
 
 router.delete('/:todoId', todosCtrl.delete)
+
+router.put('/:todoId', todosCtrl.update)
 
 export { router }

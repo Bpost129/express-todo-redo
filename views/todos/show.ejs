@@ -10,6 +10,7 @@
   <h2>Todo #<%= todo._id %></h2>
   <h3><%= todo.text %></h3>
   <p>Complete: <%= todo.done ? 'Yes' : 'No' %></p>
+  <a href="/todos/<%= todo._id %>/edit">Edit</a>
 	<a href="/todos">Go back</a>
 </body>
 </html>
