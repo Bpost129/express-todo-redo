@@ -12,4 +12,6 @@ router.get('/:todoId', todosCtrl.show)
 
 router.post('/', todosCtrl.create)
 
+router.delete('/:todoId', todosCtrl.delete)
+
 export { router }

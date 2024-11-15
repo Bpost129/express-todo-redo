@@ -43,11 +43,23 @@ function show(req, res) {
   })
 }
 
+function deleteTodo(req, res) {
+  Todo.findByIdAndDelete(req.params.todoId)
+  .then(todo => {
+    res.redirect('/todos')
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/todos')
+  })
+}
+
 export {
   index,
   newTodo as new,
   create,
   show,
+  deleteTodo as delete,
 
 }
 
