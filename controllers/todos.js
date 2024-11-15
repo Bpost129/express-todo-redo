@@ -5,6 +5,7 @@ function index(req, res) {
   .then(todos => {
     res.render('todos/index', {
       todos: todos,
+      time: req.time
     })
   })
   .catch(err => {
